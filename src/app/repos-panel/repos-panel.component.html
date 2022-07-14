@@ -1,0 +1,9 @@
+<div>
+    <div class="col fs-5 fw-bold mt-4">
+        Genres
+    </div>
+    <div *ngFor="let repo of repos" class="form-control">
+        <input name="genres[]" class="form-check-input" type="checkbox" id="{{repo.name}" value="{{repo.name}}">
+        <label class="form-check-label" for="{{repo.name}}">{{repo.name}}</label>
+    </div>
+</div>

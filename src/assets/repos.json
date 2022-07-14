@@ -1,0 +1,17 @@
+[
+    {
+        "type": "switch",
+        "owner": "skyline-emu",
+        "name": "skyline"
+    },
+    {
+        "type": "switch",
+        "owner": "yuzu-emu",
+        "name": "yuzu"
+    },
+    {
+        "type": "switch",
+        "owner": "Ryujinx",
+        "name": "Ryujinx"
+    }
+]
