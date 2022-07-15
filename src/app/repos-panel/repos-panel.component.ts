@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Repo } from '../beans';
+import { RepoInfo } from '../beans';
 import { GithubInfoService } from '../github-info.service';
 
 @Component({
@@ -9,13 +9,18 @@ import { GithubInfoService } from '../github-info.service';
 })
 export class ReposPanelComponent implements OnInit {
 
-  repos: Repo[] = [];
+  types: String[] = [];
+  reposInfo: RepoInfo[] = [];
 
   constructor(private githubInfo: GithubInfoService) { }
 
   ngOnInit(): void {
-    this.githubInfo.getRepos().subscribe(resp => {
-      this.repos = resp;
+    this.types = this.githubInfo.getTypes(); 
+
+    this.githubInfo.getReposInfo().forEach(obs => {
+      obs.subscribe(resp => {
+        this.reposInfo.push(resp);
+      });
     });
   }
 
