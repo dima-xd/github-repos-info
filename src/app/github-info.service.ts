@@ -12,9 +12,13 @@ const GITHUB_API = 'https://api.github.com/';
 export class GithubInfoService {
 
   reposInfo: Observable<RepoInfo>[] = [];
-  types: String[] = [];
+  types: string[] = [];
 
   constructor(private http: HttpClient) { }
+
+  getReposLenght() {
+    return repos.length;
+  }
 
   getTypes() {
     repos.forEach(repo => {
@@ -26,10 +30,14 @@ export class GithubInfoService {
   }
 
   getReposInfo() {
-    repos.forEach(repo => {
-      this.reposInfo.push(this.http.get<RepoInfo>(GITHUB_API + 'repos/' + repo.owner + '/' + repo.name));
+    repos.forEach((repo, i) => {
+      this.reposInfo[i] = this.http.get<RepoInfo>(GITHUB_API + 'repos/' + repo.owner + '/' + repo.name);
     });
     return this.reposInfo;
+  }
+
+  getSpecificRepoInfo(owner: string, name: string) {
+
   }
   
 }

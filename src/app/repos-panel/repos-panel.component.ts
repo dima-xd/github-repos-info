@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterContentInit, AfterViewInit, Component, OnChanges, OnDestroy, OnInit } from '@angular/core';
 import { RepoInfo } from '../beans';
 import { GithubInfoService } from '../github-info.service';
 
@@ -15,11 +15,11 @@ export class ReposPanelComponent implements OnInit {
   constructor(private githubInfo: GithubInfoService) { }
 
   ngOnInit(): void {
-    this.types = this.githubInfo.getTypes(); 
+    this.types = this.githubInfo.getTypes();
 
-    this.githubInfo.getReposInfo().forEach(obs => {
+    this.githubInfo.getReposInfo().forEach((obs, i) => {
       obs.subscribe(resp => {
-        this.reposInfo.push(resp);
+        this.reposInfo[i] = resp;
       });
     });
   }

@@ -7,13 +7,15 @@ import { HeaderComponent } from './header/header.component';
 import { ReposPanelComponent } from './repos-panel/repos-panel.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RepoInfoComponent } from './repo-info/repo-info.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     ReposPanelComponent,
-    HomeComponent
+    HomeComponent,
+    RepoInfoComponent
   ],
   imports: [
     BrowserModule,
