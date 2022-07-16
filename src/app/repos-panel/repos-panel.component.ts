@@ -9,13 +9,15 @@ import { GithubInfoService } from '../github-info.service';
 })
 export class ReposPanelComponent implements OnInit {
 
-  types: String[] = [];
+  typesSet: String[] = [];
+  repoTypes: String[] = [];
   reposInfo: RepoInfo[] = [];
 
   constructor(private githubInfo: GithubInfoService) { }
 
   ngOnInit(): void {
-    this.types = this.githubInfo.getTypes();
+    this.typesSet = this.githubInfo.getTypesSet();
+    this.repoTypes = this.githubInfo.getRepoTypes();
 
     this.githubInfo.getReposInfo().forEach((obs, i) => {
       obs.subscribe(resp => {

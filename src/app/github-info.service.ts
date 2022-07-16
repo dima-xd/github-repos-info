@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import repos from 'src/assets/repos.json'
 
 const GITHUB_API = 'https://api.github.com/';
+const REPOS_OPERATION = 'repos/';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,8 @@ const GITHUB_API = 'https://api.github.com/';
 export class GithubInfoService {
 
   reposInfo: Observable<RepoInfo>[] = [];
-  types: string[] = [];
+  typesSet: string[] = [];
+  repoTypes: string[] = [];
 
   constructor(private http: HttpClient) { }
 
@@ -20,24 +22,35 @@ export class GithubInfoService {
     return repos.length;
   }
 
-  getTypes() {
+  getTypesSet() {
     repos.forEach(repo => {
-      if (!this.types.includes(repo.type)) {
-        this.types.push(repo.type);
+      if (!this.typesSet.includes(repo.type)) {
+        this.typesSet.push(repo.type);
       }
     });
-    return this.types;
+    return this.typesSet;
+  }
+
+  getRepoTypes() {
+    repos.forEach((repo, i) => {
+      this.repoTypes[i] = repo.type;
+    });
+    return this.repoTypes;
   }
 
   getReposInfo() {
     repos.forEach((repo, i) => {
-      this.reposInfo[i] = this.http.get<RepoInfo>(GITHUB_API + 'repos/' + repo.owner + '/' + repo.name);
+      this.reposInfo[i] = this.http.get<RepoInfo>(GITHUB_API + REPOS_OPERATION + repo.owner + '/' + repo.name);
     });
     return this.reposInfo;
   }
 
   getSpecificRepoInfo(owner: string, name: string) {
+    return this.http.get<RepoInfo>(GITHUB_API + REPOS_OPERATION + owner + '/' + name);
+  }
 
+  getRepoLanguages(owner: string, name: string) {
+    return this.http.get(GITHUB_API + REPOS_OPERATION + owner + '/' + name + '/' + 'languages');
   }
   
 }

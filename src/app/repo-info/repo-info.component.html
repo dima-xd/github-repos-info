@@ -1,0 +1,49 @@
+<app-header></app-header>
+<div class="container text-white">
+    <h1 class="text-capitalize">{{repoInfo?.name}}</h1>
+    <div class="row">
+        <div class="col">
+            <a href="{{repoInfo?.html_url}}">
+                <img class="img-fluid border" alt="{{repoInfo?.name}}" src="{{repoInfo?.organization?.avatar_url}}">
+            </a>
+        </div>
+
+        <div class="col-5">
+            <div class="alert alert-secondary">
+                <div class="fs-4 fw-bold text-center">Statistics</div>
+                <hr class="bg-secondary border-2 border-top border-secondary">
+                <div class="row">
+                    <div class="col">Subscribers: {{repoInfo?.subscribers_count}}</div>
+                    <div class="col">Forks: {{repoInfo?.forks}}</div>
+                    <div class="col">Watchers: {{repoInfo?.watchers}}</div>   
+                </div>
+            </div>
+            <div class="alert alert-secondary">
+                <div class="fs-4 fw-bold text-center">Links</div>
+                <hr class="bg-secondary border-2 border-top border-secondary">
+                Homepage: <a href="{{repoInfo?.homepage}}">{{repoInfo?.name}}</a>
+                <br>
+                Organization: <a href="{{repoInfo?.organization?.html_url}}">{{repoInfo?.organization?.login}}</a>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="alert alert-secondary">
+                <div class="fs-4 fw-bold text-center">Languages</div>
+                <hr class="bg-secondary border-2 border-top border-secondary">
+                <ul class="list-group ms-3">
+                    <li *ngFor="let language of languages | keyvalue" class="ist-group-item">
+                        {{language.key}} [{{language.value}}]
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-4">
+        <div class="alert alert-secondary">
+            <div class="fs-4 fw-bold">Description</div>
+            <hr class="bg-secondary border-2 border-top border-secondary">
+            <div>{{repoInfo?.description}}</div>
+        </div>
+    </div>
+</div>

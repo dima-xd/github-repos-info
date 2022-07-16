@@ -13,5 +13,40 @@
         "type": "switch",
         "owner": "Ryujinx",
         "name": "Ryujinx"
+    },
+    {
+        "type": "PlayStation 2",
+        "owner": "PCSX2",
+        "name": "pcsx2"
+    },
+    {
+        "type": "PlayStation 3",
+        "owner": "RPCS3",
+        "name": "rpcs3"
+    },
+    {
+        "type": "GameCube/Wii",
+        "owner": "dolphin-emu",
+        "name": "dolphin"
+    },
+    {
+        "type": "Nintendo 3DS",
+        "owner": "citra-emu",
+        "name": "citra"
+    },
+    {
+        "type": "Xbox 360",
+        "owner": "xenia-project",
+        "name": "xenia"
+    },
+    {
+        "type": "PlayStation Vita",
+        "owner": "Vita3K",
+        "name": "Vita3K"
+    },
+    {
+        "type": "Retro",
+        "owner": "OpenEmu",
+        "name": "OpenEmu"
     }
 ]

@@ -139,3 +139,7 @@ export interface RepoInfo {
     site_admin: boolean
   }
   
+  export interface Language {
+    language: Map<string, number>
+  }
+  

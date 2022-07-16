@@ -5,7 +5,8 @@ import { RepoInfoComponent } from './repo-info/repo-info.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'repo', component: RepoInfoComponent }
+  { path: 'repo', component: RepoInfoComponent },
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({
