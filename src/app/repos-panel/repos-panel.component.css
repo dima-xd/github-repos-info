@@ -19,6 +19,18 @@
     height: 75px;
 }
 
+.centered-cards {
+    margin: 0;
+    clear:both;
+    min-width: 220px;
+}
+
+@media screen and (max-width: 575px) {
+    .centered-cards .card {
+        margin: 0 auto;
+    }
+}
+
 .alert.alert-primary {
     margin-bottom: 0%;
 }

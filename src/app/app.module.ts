@@ -8,6 +8,8 @@ import { ReposPanelComponent } from './repos-panel/repos-panel.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RepoInfoComponent } from './repo-info/repo-info.component';
+import { RepoInfoHeaderComponent } from './repo-info-header/repo-info-header.component';
+import { ContributorsComponent } from './contributors/contributors.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { RepoInfoComponent } from './repo-info/repo-info.component';
     HeaderComponent,
     ReposPanelComponent,
     HomeComponent,
-    RepoInfoComponent
+    RepoInfoComponent,
+    RepoInfoHeaderComponent,
+    ContributorsComponent,
   ],
   imports: [
     BrowserModule,
