@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-repo-info-header',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RepoInfoHeaderComponent implements OnInit {
 
-  constructor() { }
+  @Input() owner: string | undefined;
+  @Input() name: string | undefined;
+
+  isCurrentHome: boolean = false;
+  isCurrentContributors: boolean = false;
+
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+    const currentUrl = this.router.url.split('?')[0];
+    switch (currentUrl) {
+      case '/contributors': {
+        this.isCurrentContributors = true;
+        break;
+      }
+      default: break;
+    }
   }
 
 }
