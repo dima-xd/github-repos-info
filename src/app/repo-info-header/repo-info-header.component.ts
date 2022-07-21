@@ -11,20 +11,12 @@ export class RepoInfoHeaderComponent implements OnInit {
   @Input() owner: string | undefined;
   @Input() name: string | undefined;
 
-  isCurrentHome: boolean = false;
-  isCurrentContributors: boolean = false;
+  currentUrl: String | undefined;
 
   constructor(private router: Router) { }
 
   ngOnInit(): void {
-    const currentUrl = this.router.url.split('?')[0];
-    switch (currentUrl) {
-      case '/contributors': {
-        this.isCurrentContributors = true;
-        break;
-      }
-      default: break;
-    }
+    this.currentUrl = this.router.url.split('?')[0];
   }
 
 }

@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RepoInfoComponent } from './repo-info/repo-info.component';
 import { RepoInfoHeaderComponent } from './repo-info-header/repo-info-header.component';
 import { ContributorsComponent } from './contributors/contributors.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { ContributorsComponent } from './contributors/contributors.component';
     RepoInfoComponent,
     RepoInfoHeaderComponent,
     ContributorsComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,

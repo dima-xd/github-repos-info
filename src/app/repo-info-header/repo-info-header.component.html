@@ -9,7 +9,7 @@
             <a class="nav-link" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" [className]="isCurrentContributors ? 'nav-link disabled' : 'nav-link'" 
+            <a class="nav-link" [class.disabled]="currentUrl == '/contributors'" 
             [routerLink]="['/contributors']" [queryParams]="{ 'owner':owner, 'name':name}">Contributors</a>
           </li>
         </ul>
