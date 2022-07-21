@@ -1,16 +1,16 @@
 [
     {
-        "type": "switch",
+        "type": "Switch",
         "owner": "skyline-emu",
         "name": "skyline"
     },
     {
-        "type": "switch",
+        "type": "Switch",
         "owner": "yuzu-emu",
         "name": "yuzu"
     },
     {
-        "type": "switch",
+        "type": "Switch",
         "owner": "Ryujinx",
         "name": "Ryujinx"
     },

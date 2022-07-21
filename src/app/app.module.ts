@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RepoInfoComponent } from './repo-info/repo-info.component';
 import { RepoInfoHeaderComponent } from './repo-info-header/repo-info-header.component';
 import { ContributorsComponent } from './contributors/contributors.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ContributorsComponent } from './contributors/contributors.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

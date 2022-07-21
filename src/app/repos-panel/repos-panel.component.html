@@ -1,5 +1,25 @@
 <div class="container">
-    <div class="row">
+
+    <div class="row fixed-collapse">
+        <div class="d-flex justify-content-center mt-4">
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#sort" aria-expanded="false" aria-controls="sort">
+              Sort
+            </button>
+        </div>
+        <div class="collapse col-sm-9 offset-md-1" id="sort">
+            <div class="col alert alert-primary text-center fs-4 fw-bold">
+                Types
+            </div>
+            <div *ngFor="let type of checkboxes" class="form-control">
+                <input type="checkbox" class="form-check-input" [value]="type.name" [checked]="type.isChecked"
+                    (change)="onChangeType($event)"
+                />
+                <label class="form-check-label ms-2 text-capitalize" for="{{type.name}}">{{type.name}}</label>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row justify-content-start">
         <div *ngFor="let info of reposInfo; index as i" class="col-sm-3 mt-4 centered-cards">
             <div class="card border border-2 border-secondary centered-cards">
                 <img class="card-img-top img-fluid" src="{{info?.organization?.avatar_url}}">
@@ -21,4 +41,5 @@
             </div>
         </div>
     </div>
+    
 </div>

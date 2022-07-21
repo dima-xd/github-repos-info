@@ -24,9 +24,11 @@ export class GithubInfoService {
   }
 
   getTypesSet() {
+    let i = 0;
     repos.forEach(repo => {
       if (!this.typesSet.includes(repo.type)) {
-        this.typesSet.push(repo.type);
+        this.typesSet[i] = repo.type;
+        i++;
       }
     });
     return this.typesSet;

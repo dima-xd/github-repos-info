@@ -34,3 +34,9 @@
 .alert.alert-primary {
     margin-bottom: 0%;
 }
+
+.fixed-collapse {
+    position: fixed;
+    left: 0;
+    z-index: 50;
+}
