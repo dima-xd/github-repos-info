@@ -1,6 +1,4 @@
-import { AfterContentInit, AfterViewInit, Component, OnChanges, OnDestroy, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup, NgForm } from '@angular/forms';
-import { interval, Subscription, takeWhile } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
 import { RepoInfo } from '../beans';
 import { GithubInfoService } from '../github-info.service';
 
@@ -22,8 +20,6 @@ export class ReposPanelComponent implements OnInit {
 
   constructor(private githubInfo: GithubInfoService) { }
 
-  subscription: Subscription | undefined;
-
   ngOnInit(): void {
     this.repoTypes = this.githubInfo.getRepoTypes();
     this.allReposTypes = [...this.repoTypes];
@@ -38,14 +34,11 @@ export class ReposPanelComponent implements OnInit {
         this.allReposInfo[i] = resp;
       });
     });
-    const source = interval(1000)
-    this.subscription = source.subscribe(val => console.log(this.repoTypes.length));
   }
 
   onChangeType(event: any) {
     const name = event.target.value;
     const isChecked = event.target.checked;
-    console.log(name, isChecked)
     switch (isChecked) {
       case true: {
         this.show(name);

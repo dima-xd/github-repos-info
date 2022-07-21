@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Language, RepoInfo } from '../beans';
+import { RepoInfo } from '../beans';
 import { GithubInfoService } from '../github-info.service';
 
 @Component({

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Contributor, User } from '../beans';
+import { User } from '../beans';
 import { GithubInfoService } from '../github-info.service';
 
 @Component({
